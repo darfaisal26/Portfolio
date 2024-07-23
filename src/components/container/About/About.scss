@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+.about_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  position: relative;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  .about_left {
+    background: rgb(86, 220, 200);
+    max-width: 350px;
+    height: 350px;
+    justify-self: center;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(244, 110, 66);
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .about_right {
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 700px) {
+      padding: 0;
+      margin-top: 2rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      max-width: 450px;
+    }
+    .bio {
+      display: flex;
+      font-size: 0.85rem;
+      max-width: 200px;
+      margin-bottom: 1rem;
+
+      .bioKey {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-right: 3rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      text-transform: capitalize;
+      width: 165px;
+    }
+  }
+}
+
+.shadow {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 700px) {
+    width: 350px !important;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 450px !important;
+  }
+  @media screen and (max-width: 1300px) {
+    padding: 20;
+    margin-top: 2rem;
+    width: 450px !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 300px !important;
+  }
+
+  p {
+    font-family: "Fredoka";
+    text-transform: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  .bio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    max-width: 450px !important;
+    margin-bottom: 1rem;
+    text-transform: none;
+    @media screen and (max-width: 1300px) {
+      min-width: 400px !important;
+    }
+    @media screen and (max-width: 500px) {
+      display: none !important;
+    }
+
+    .bioKey {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-right: 3rem;
+      // background-color: red;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    width: 165px;
+  }
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin: 200px auto 0;
+  width: 700px;
+  height: 350px;
+  background: #20232f;
+}
+
+.shadow::before,
+.shadow::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: linear-gradient(
+    45deg,
+    red,
+    blue,
+    green,
+    rgb(115, 255, 0),
+    #e11d74,
+    black,
+    #ffff00,
+    #aa0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 25s linear infinite;
+}
+
+.shadow::after {
+  filter: blur(25px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
